@@ -26,7 +26,7 @@ RUN yum install -y yum-utils
 RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 RUN yum install -y docker-ce docker-ce-cli containerd.io
 
-#locale: unsupported locale setting (리눅스 locale 설정) // 파이썬3.9설치하면 yum이 사라짐
+#locale: unsupported locale setting (리눅스 locale 설정) // 파이썬3.9설치하면 /usr/bin/yum 에서 !/usr/bin/python2로 수정해줘야하므로 빌드때는 이렇게.
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 ENV LC_ALL=en_US.UTF-8
 
