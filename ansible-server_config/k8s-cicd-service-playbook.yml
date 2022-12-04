@@ -1,0 +1,8 @@
+- name: Create service for deployment
+  hosts: kubernetes
+  # become: true
+  # user: ubuntu
+
+  tasks:
+  - name: Create a service
+    command: kubectl apply -f cicd-devops-service.yml
